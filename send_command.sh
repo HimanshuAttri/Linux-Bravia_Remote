@@ -2,8 +2,8 @@
 
 
 
-ip="192.168.0.102"
 
+ic=$2
 
 
  myfun()
@@ -88,19 +88,19 @@ ip="192.168.0.102"
 
             
             
-            "GGuide")
+            "'G'")
                echo  "AAAAAQAAAAEAAAAOAw=="
                 ;;
 
             
             
-            "up")
+            "'*'")
                echo  "AAAAAQAAAAEAAAAQAw=="
                 ;;
 
             
             
-            "down")
+            "'/'")
                echo  "AAAAAQAAAAEAAAARAw=="
                 ;;
 
@@ -148,25 +148,25 @@ ip="192.168.0.102"
 
             
             
-            "Input")
+            "'I'")
                echo  "AAAAAQAAAAEAAAAlAw=="
                 ;;
 
             
             
-            "TvInput")
+            "'n'")
                echo  "AAAAAQAAAAEAAAAlAw=="
                 ;;
 
             
             
-            "TvAntennaCable")
+            "'b'")
                echo  "AAAAAQAAAAEAAAAqAw=="
                 ;;
 
             
             
-            "WakeUp")
+            "'W'")
                echo  "AAAAAQAAAAEAAAAuAw=="
                 ;;
 
@@ -178,37 +178,37 @@ ip="192.168.0.102"
 
             
             
-            "Sleep")
+            "'S'")
                echo  "AAAAAQAAAAEAAAAvAw=="
                 ;;
 
             
             
-            "Right")
+            "'R'")
                echo  "AAAAAQAAAAEAAAAzAw=="
                 ;;
 
             
             
-            "Left")
+            "'L'")
                echo  "AAAAAQAAAAEAAAA0Aw=="
                 ;;
 
             
             
-            "SleepTimer")
+            "'U'")
                echo  "AAAAAQAAAAEAAAA2Aw=="
                 ;;
 
             
             
-            "Analog2")
+            "'@'")
                echo  "AAAAAQAAAAEAAAA4Aw=="
                 ;;
 
             
             
-            "TvAnalog")
+            "'!'")
                echo  "AAAAAQAAAAEAAAA4Aw=="
                 ;;
 
@@ -265,6 +265,9 @@ ip="192.168.0.102"
             "'h'")
                echo  "AAAAAQAAAAEAAABgAw=="
                 ;;
+ 	"h")
+               echo  "AAAAAQAAAAEAAABgAw=="
+                ;;
 
             
             
@@ -280,7 +283,10 @@ ip="192.168.0.102"
 
             
             
-            "'\r'")
+            "'q'")
+               echo  "AAAAAQAAAAEAAABlAw=="
+                ;;
+	  "q")
                echo  "AAAAAQAAAAEAAABlAw=="
                 ;;
 
@@ -500,6 +506,28 @@ ip="192.168.0.102"
                echo  "AAAAAgAAAJcAAABOAw=="
                 ;;
 
+            "w")
+               echo  "AAAAAgAAAJcAAABPAw=="
+                ;;
+
+            
+            
+            "s")
+               echo  "AAAAAgAAAJcAAABQAw=="
+                ;;
+
+            
+            
+            "a")
+               echo  "AAAAAgAAAJcAAABNAw=="
+                ;;
+
+            
+            
+            "d")
+               echo  "AAAAAgAAAJcAAABOAw=="
+                ;;
+
             
             
             "ShopRemoteControlForcedDynamic")
@@ -701,11 +729,18 @@ ip="192.168.0.102"
 cmd="<?xml version=\"1.0\"?><s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><s:Body><u:X_SendIRCC xmlns:u=\"urn:schemas-sony-com:service:IRCC:1\"><IRCCCode>$(myfun $1)</IRCCCode></u:X_SendIRCC></s:Body></s:Envelope>"
 
 
-code=$(curl -w "%{http_code}" --silent -XPOST http://$ip/sony/IRCC -d "$cmd" -H 'Content-Type: text/xml; charset=UTF-8' -H 'SOAPACTION: "urn:schemas-sony-com:service:IRCC:1#X_SendIRCC"' -H "X-Auth-PSK: 0000" -o /dev/null )
+code=$(curl -s -w "%{http_code}"  -XPOST http://$2/sony/IRCC -d "$cmd" -H 'Content-Type: text/xml; charset=UTF-8' -H 'SOAPACTION: "urn:schemas-sony-com:service:IRCC:1#X_SendIRCC"' -H "X-Auth-PSK: 0000" -o /dev/null )  
 
-if [ "$code" = "200" ]; then
-  echo "✓" $a
-else
-  echo "Command failed (HTTP_CODE: $code, try running it in a console)"
-  exit 1
-fi
+#if [ "$code" = "000" ]; then
+#  echo "Ip $2 Not Valid"
+#  read j
+
+
+#elif [ "$code" = "200" ]; then
+#  echo "Executed" 
+#else
+#  echo "Command failed (HTTP_CODE: $code, try running it in a console)"
+#  read x
+#  exit 1
+#fi
+
