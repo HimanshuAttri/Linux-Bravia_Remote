@@ -52,6 +52,9 @@ HDMI4 V
 	
 	a=repr(readchar.readchar())
 	print a
+	text_file = open("Output.txt", "aw")
+
+	text_file.write(a+"\n")
 
 	if( a=="';'"):
 		exit()
@@ -72,3 +75,4 @@ HDMI4 V
 	call(["clear"])
 
 	
+
