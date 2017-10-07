@@ -1,32 +1,25 @@
- # -*- coding: utf-8 -*-
+ #---------------Libs----------------------
 import sys  
 from Tkinter import *
 import numpy as np
 import os.path
 from subprocess import call
+
+#--------------Ex-Vars----------------
 ip="192.168.0.107"
 sz=10
 x1=""
 
+#----------Main Window-------------------
 root = Tk()
-
 root.title("Bravia Remote")
-#root.configure(background='black')
 
-def save():
-  text_file = open("ip.br", "w")
-  text_file.write(e.get())
-  text_file.close()   
- 
- 
+ #-------------------Sender-----------------------
 
 def caller(x):
   a=x
   print a
   5555
-  
-
-
   
 
   if( a=="';'"):
@@ -49,14 +42,28 @@ def caller(x):
 import os.path
 adrst=os.path.exists("ip.br")
 
+#  ------------------Button Matrix----------------------------------------------------
 
 
+#--------------NumPad---------------------------------------------
+Button(root, text='1',command=lambda: caller("'1'"), font=(None, sz)).grid(row=2,column=0)
+Button(root, text='2',command=lambda: caller("'2'"),font=(None, sz)).grid(row=2,column=1)
+Button(root, text='3',command=lambda: caller("'3'"),font=(None, sz)).grid(row=2,column=2)
+Button(root, text='4',command=lambda: caller("'4'"),font=(None, sz)).grid(row=3,column=0)
+Button(root, text='5',command=lambda: caller("'5'"),font=(None, sz)).grid(row=3,column=1)
+Button(root, text='6',command=lambda: caller("'6'"),font=(None, sz)).grid(row=3,column=2)
+Button(root, text='7',command=lambda: caller("'7'"),font=(None, sz)).grid(row=4,column=0)
+Button(root, text='8',command=lambda: caller("'8'"),font=(None, sz)).grid(row=4,column=1)
+Button(root, text='9',command=lambda: caller("'9'"),font=(None, sz)).grid(row=4,column=2)
 
-
+#-----------------------Controls-----------------------------
 
 
 power=Button(root, text='p',command=lambda: caller("'p'"),font=(None, sz),bg="green",foreground="yellow")
 power.grid(row=0,column=0)
+
+tvan= Button(root, text='o',command=lambda: caller("'!'"),font=(None, sz))
+tvan.grid(row=2,column=3)
 
 help=Button(root, text='i',command=lambda: caller("'i'"),font=(None, sz))
 help.grid(row=0,column=3)
@@ -64,35 +71,8 @@ help.grid(row=0,column=3)
 info=Label(root,font=(None, sz),text="Hi !",bg="yellow")
 info.grid(row=0,column=1)
 
-
-  
-
-
-
-
-
-
-
-
-Button(root, text='1',command=lambda: caller("'1'"), font=(None, sz)).grid(row=2,column=0)
-Button(root, text='2',command=lambda: caller("'2'"),font=(None, sz)).grid(row=2,column=1)
-Button(root, text='3',command=lambda: caller("'3'"),font=(None, sz)).grid(row=2,column=2)
-
-tvan= Button(root, text='o',command=lambda: caller("'!'"),font=(None, sz))
-tvan.grid(row=2,column=3)
-
-
-Button(root, text='4',command=lambda: caller("'4'"),font=(None, sz)).grid(row=3,column=0)
-Button(root, text='5',command=lambda: caller("'5'"),font=(None, sz)).grid(row=3,column=1)
-Button(root, text='6',command=lambda: caller("'6'"),font=(None, sz)).grid(row=3,column=2)
-
 stim=Button(root, text='t',command=lambda: caller("'U'"),font=(None, sz))
 stim.grid(row=3,column=3)
-
-
-Button(root, text='7',command=lambda: caller("'7'"),font=(None, sz)).grid(row=4,column=0)
-Button(root, text='8',command=lambda: caller("'8'"),font=(None, sz)).grid(row=4,column=1)
-Button(root, text='9',command=lambda: caller("'9'"),font=(None, sz)).grid(row=4,column=2)
 
 am=Button(root, text='m',command=lambda: caller("'O'"),font=(None, sz))
 am.grid(row=4,column=3)
@@ -149,6 +129,7 @@ exit.grid(row=11,column=2)
 wake= Button(root, text='W',command=lambda: caller("'W'"),font=(None, sz))
 wake.grid(row=11,column=3)
 
+#-------------------------------On-Hover-Button-----------------------------
 
 back.bind("<Enter>", lambda event:info.config(text="Back"))
 back.bind("<Leave>", lambda event: info.config(text="    "))
