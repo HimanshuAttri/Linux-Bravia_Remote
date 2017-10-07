@@ -17,7 +17,8 @@ bravia-terminal-control.py #Terminal
 
 GUI:
 
-![btt](https://user-images.githubusercontent.com/12981490/31248724-65acd188-aa32-11e7-9b20-d69cba2c521c.png)
+![newr](https://user-images.githubusercontent.com/12981490/31310212-5c7fe6e2-abb1-11e7-9b65-16ec67d606dc.png)
+
 
 Terminal
 
