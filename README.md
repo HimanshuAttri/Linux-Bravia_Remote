@@ -1,4 +1,4 @@
-# Linux Bravia Remote 
+# PyBraviaRemote 
 
 ### Required Steps
 
