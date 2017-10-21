@@ -29,3 +29,8 @@ bravia-terminal-control.py #Terminal
 
 
 # Bravia_Bot-Automation
+
+Executes steps registered in a file 
+
+python BraviaBot.py
+
