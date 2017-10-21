@@ -33,6 +33,7 @@ bravia-terminal-control.py #Terminal
 Executes steps registered in a file 
 
 python BraviaBot.py
+toh# S
 
 ![acar](https://user-images.githubusercontent.com/12981490/31854721-853fed10-b6bb-11e7-8dd6-01f160a4eec4.png)
 
