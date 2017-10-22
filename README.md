@@ -28,12 +28,5 @@ bravia-terminal-control.py #Terminal
 ![terr](https://user-images.githubusercontent.com/12981490/31248845-ca94bb88-aa32-11e7-99c9-d55c1d0b8d96.png)
 
 
-# Bravia_Bot-Automation
 
-Executes steps registered in a file 
-
-python BraviaBot.py
-toh# S
-
-![acar](https://user-images.githubusercontent.com/12981490/31854721-853fed10-b6bb-11e7-8dd6-01f160a4eec4.png)
 
