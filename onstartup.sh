@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#To start run remote on startup
+#To start run remote on startup chmod 777 
 
 python pathto-BraviaGUI.py &
 #replace actual pathto with actual path of BraviaGUI.py
